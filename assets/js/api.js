@@ -1,3 +1,4 @@
+
 const apiRoot = 'https://spapi.dev/api/';
 
 export const fetchCharacters = async () => {
