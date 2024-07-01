@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Park Episodes</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body class="font-sans p-5">
+    <h1 class="text-center text-2xl mb-4">South Park Episodes</h1>
+
+    <button onclick="navigateToHomePage()" class="py-2 px-4 bg-blue-500 text-white rounded mb-4">&lt; Home</button>
+
+    <div id="output"></div>
+
+    <script>
+        function navigateToHomePage() {
+            window.location.href = "/index.html";
+        }
+    </script>
+    <script type="module" src="/assets/js/episodes.js"></script>
+</body>
+
+</html>

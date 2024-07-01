@@ -1,21 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
-}
-
-button {
-    margin: 10px;
 }
 
 #output {
     margin-top: 20px;
 }
 
-.character,
+.character, .episode, .location, .family,
 .item {
     cursor: pointer;
     padding: 10px;
@@ -25,12 +25,12 @@ button {
     border-radius: 5px;
 }
 
-.character:hover,
+.character:hover, .episode:hover, .location:hover, .family:hover,
 .item:hover {
     background-color: #e0e0e0;
 }
 
-.character-details {
+.character-details, .episode-details, .location-details, .family-details {
     margin-top: 20px;
     padding: 10px;
     background-color: #f9f9f9;
@@ -38,69 +38,30 @@ button {
     border-radius: 5px;
 }
 
-.episode,
-.item {
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
     cursor: pointer;
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-.episode,
-.item:hover {
-    background-color: #e0e0e0;
+.pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
-.episode-details {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.image-container img {
+    width: 200px; 
+    height: 150px; 
+    object-fit: cover; 
 }
 
-.location,
-.item {
-    cursor: pointer;
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.hidden {
+    display: none;
 }
 
-.location,
-.item:hover {
-    background-color: #e0e0e0;
-}
-
-.location-details {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-}
-
-.family,
-.item {
-    cursor: pointer;
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.family,
-.item:hover {
-    background-color: #e0e0e0;
-}
-
-.family-details {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-}

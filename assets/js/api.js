@@ -1,114 +1,106 @@
 
-const apiRoot = 'https://spapi.dev/api/';
+const baseURL = 'https://spapi.dev/api';
 
-export const fetchCharacters = async () => {
+export const fetchCharacters = async (page = 1, perPage = 10) => {
     try {
-        const response = await fetch(`${apiRoot}characters`);
+        const response = await fetch(`${baseURL}/characters?page=${page}&per_page=${perPage}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Failed to fetch characters');
         }
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
         console.error('Error fetching characters:', error);
-        throw error;
+        return { data: [] };
     }
 };
 
-export const fetchEpisodes = async () => {
+export const fetchCharacterById = async (characterId) => {
     try {
-        const response = await fetch(`${apiRoot}episodes`);
+        const response = await fetch(`${baseURL}/characters/${characterId}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Failed to fetch character with ID ${characterId}`);
         }
-        const data = await response.json();
-        return data;
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching character with ID ${characterId}:`, error);
+        return { data: {} }; 
+    }
+};
+
+export const fetchEpisodes = async (page = 1, perPage = 10) => {
+    try {
+        const response = await fetch(`${baseURL}/episodes?page=${page}&per_page=${perPage}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch episodes');
+        }
+        return await response.json();
     } catch (error) {
         console.error('Error fetching episodes:', error);
-        throw error;
+        return { data: [] };
     }
 };
 
-export const fetchEpisodeById = async (id) => {
+export const fetchEpisodeById = async (episodeId) => {
     try {
-        const response = await fetch(`${apiRoot}episodes/${id}`);
+        const response = await fetch(`${baseURL}/episodes/${episodeId}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Failed to fetch episode with ID ${episodeId}`);
         }
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
-        console.error(`Error fetching episode with ID ${id}:`, error);
-        throw error;
+        console.error(`Error fetching episode with ID ${episodeId}:`, error);
+        return { data: {} };
     }
 };
 
-export const fetchLocations = async () => {
+export const fetchLocations = async (page = 1, perPage = 10) => {
     try {
-        const response = await fetch(`${apiRoot}locations`);
+        const response = await fetch(`${baseURL}/locations?page=${page}&per_page=${perPage}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Failed to fetch locations');
         }
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
         console.error('Error fetching locations:', error);
-        throw error;
+        return { data: [] };
     }
 };
 
-export const fetchLocationById = async (id) => {
+export const fetchFamilyById = async (familyId) => {
     try {
-        const response = await fetch(`${apiRoot}locations/${id}`);
+        const response = await fetch(`${baseURL}/families/${familyId}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Failed to fetch family with ID ${familyId}`);
         }
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
-        console.error(`Error fetching location with ID ${id}:`, error);
-        throw error;
+        console.error(`Error fetching family with ID ${familyId}:`, error);
+        return { data: {} };
     }
 };
 
-export const fetchFamilies = async () => {
+export const fetchFamilies = async (page = 1, perPage = 10) => {
     try {
-        const response = await fetch(`${apiRoot}families`);
+        const response = await fetch(`${baseURL}/families?page=${page}&per_page=${perPage}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Failed to fetch families');
         }
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
         console.error('Error fetching families:', error);
-        throw error;
+        return { data: [] };
     }
 };
 
-export const fetchFamilyById = async (id) => {
+export const fetchLocationById = async (locationId) => {
     try {
-        const response = await fetch(`${apiRoot}families/${id}`);
+        const response = await fetch(`${baseURL}/locations/${locationId}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Failed to fetch location with ID ${locationId}`);
         }
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
-        console.error(`Error fetching family with ID ${id}:`, error);
-        throw error;
-    }
-};
-
-export const fetchCharacterById = async (id) => {
-    try {
-        const response = await fetch(`${apiRoot}characters/${id}`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(`Error fetching character with ID ${id}:`, error);
-        throw error;
+        console.error(`Error fetching location with ID ${locationId}:`, error);
+        return { data: {} };
     }
 };

@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>South Park</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>South Park</h1>
-    <button id="characters">Characters</button>
-    <button id="episodes">Episodes</button>
-    <button id="locations">Locations</button>
-    <button id="families">Families</button>
-    
-    <div id="output"></div>
 
-    <script type="module" src="/assets/js/main.js"></script>
+<body class="font-sans p-5">
+    <header class="text-center text-2xl mb-4">South Park</header>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 w-full max-w-screen-lg mx-auto">
+        <a href="assets/html/characters.html" class="group flex flex-col items-center justify-center text-center">
+            <img src="assets/img/Characters_southpark.jpg" alt="South Park Characters" class="w-full h-auto object-cover mb-2 rounded-lg shadow-lg">
+            <mark class="bg-black text-white text-lg font-bold p-2 opacity-0 group-hover:opacity-50 transition duration-300">Characters</mark>
+        </a>
+
+        <a href="assets/html/episodes.html" class="group flex flex-col items-center justify-center text-center">
+            <img src="assets/img/episodes_southpark.jpg" alt="South Park Episodes" class="w-full h-auto object-cover mb-2 rounded-lg shadow-lg">
+            <mark class="bg-black text-white text-lg font-bold p-2 opacity-0 group-hover:opacity-50 transition duration-300">Episodes</mark>
+        </a>
+
+        <a href="assets/html/locations.html" class="group flex flex-col items-center justify-center text-center">
+            <img src="assets/img/locations_southpark.jpg" alt="South Park Locations" class="w-full h-auto object-cover mb-2 rounded-lg shadow-lg">
+            <mark class="bg-black text-white text-lg font-bold p-2 opacity-0 group-hover:opacity-50 transition duration-300">Locations</mark>
+        </a>
+
+        <a href="assets/html/families.html" class="group flex flex-col items-center justify-center text-center">
+            <img src="assets/img/family_southpark.jpg" alt="South Park Families" class="w-full h-auto object-cover mb-2 rounded-lg shadow-lg">
+            <mark class="bg-black text-white text-lg font-bold p-2 opacity-0 group-hover:opacity-50 transition duration-300">Families</mark>
+        </a>
+    </section>
+
+    <footer class="text-center mt-8">© 2024 South Park</footer>
 </body>
+
 </html>
